@@ -1,0 +1,62 @@
+<!--
+  ~ /*
+  ~  * Copyright 2016-2017 the original author or authors.
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+  <div class="container-fluid">
+    - <div class="container xd-container">
+      <h2>List of EauElectricite</h2>
+      <div class="row">
+        <div class="col-sm-3"></div>
+  
+        <input type="text" class="col-sm-7" [(ngModel)]="name" />
+        <button class="btn " (click)="search()">Search</button>
+      </div>
+      <br>
+  
+      <div class="table-responsive">
+        <table [hidden]="no_visits" class=" table table-condensed">
+          <thead>
+            <tr>
+              <th>Borderaux</th>
+              <th>Date</th>
+              <th>MontantTransfer</th>
+              <th>User</th>
+              <th>NumFacture</th>
+              <th>frais</th>
+              <th>Action</th>
+  
+            </tr>
+          </thead>
+          <tr *ngFor="let at of rows">
+  
+            <td>{{at.borderaux}}</td>
+            <td>{{at.date}}</td>
+            <td>{{at.montantTransfer}}</td>
+            <td>{{at.refUser!=null?at.refUser.firstName:"-"}} - {{at.refUser!=null?at.refUser.lastName:"-"}}</td>
+            <td>{{at.numFacture}}</td>
+            <td>{{at.frais}}</td>
+           
+            <td><button class="btn btn-default" (click)="delete(at)">delete</button></td>
+  
+          </tr>
+        </table>
+        <mat-paginator (page)="paginat($event)" [length]="page.totalElements" [pageSize]="page.size" [pageSizeOptions]="[5, 10]">
+        </mat-paginator>
+        <div>
+          <button class="btn btn-default" (click)="addEauElectricite()">Add</button>
+        </div>
+      </div>
+    </div>

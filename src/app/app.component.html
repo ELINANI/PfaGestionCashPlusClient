@@ -1,0 +1,79 @@
+<!--
+  ~ /*
+  ~  * Copyright 2016-2017 the original author or authors.
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *      http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
+<div class="container-fluid">
+
+<nav class="navbar navbar-default " role="navigation">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#"><span></span></a>
+  </div>
+
+    <ul class="nav navbar-nav">
+      <li>
+        <a routerLink="welcome" title="home page">
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Users<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/users"><span class="glyphicon glyphicon-search"
+                                            aria-hidden="true"></span><span> All</span></a></li>
+          <li><a routerLink="/users/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Add New</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Transaction<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/autreFawatir"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> AutreFawatir</span></a>
+          </li>
+          <li><a routerLink="/autreTransaction"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> AutreTransaction</span></a>
+          </li>
+          <li><a routerLink="/in"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> In</span></a>
+            <!-- <li><a routerLink="/out"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> Out</span></a>
+          </li> -->
+          <li><a routerLink="/eauElectricite"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> EauElectricite</span></a>
+          </li>
+          <li><a routerLink="/devise"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> Devise</span></a>
+          </li>
+        </ul>
+       
+      </li>
+  
+    </ul>
+
+  </div>
+</nav>
+
+</div>
+
+
+
+<router-outlet></router-outlet>
+
+<br/>
+<br/>
+
